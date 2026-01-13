@@ -6,6 +6,7 @@ export default function Page() {
       <SectionOdd
         heading='Vehicle Rentals'
         subheading='Explore convenient and affordable vehicle rental options'
+        heroImage='/images/vehicle-rentals.jpg'
       />
     </main>
   )

@@ -6,6 +6,7 @@ export default function Page() {
       <SectionOdd
         heading='Currency Exchange'
         subheading='Find the best rates and services for your currency needs'
+        heroImage='/images/currency-exchange.jpg'
       />
     </main>
   )

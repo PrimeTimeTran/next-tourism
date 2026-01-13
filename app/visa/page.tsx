@@ -6,6 +6,7 @@ export default function Page() {
       <SectionOdd
         heading='Visa'
         subheading='Simplify your travel with our visa assistance services'
+        heroImage='/images/visa-paperwork.jpg'
       />
     </main>
   )
