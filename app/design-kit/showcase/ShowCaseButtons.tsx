@@ -1,6 +1,6 @@
 import { ModeToggleButton } from './ModeToggleButton'
 
-export function ShowcaseButtons() {
+export function ShowCaseButtons() {
   return (
     <div className='flex flex-wrap gap-4 bg-background p-6'>
       <ModeToggleButton />

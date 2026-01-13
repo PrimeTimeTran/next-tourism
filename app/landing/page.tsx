@@ -1,4 +1,4 @@
-import { Hero, SectionOdd, SectionEven } from '../components'
+import { Hero, SectionOdd, SectionEven } from '../../components'
 export default function Page() {
   return (
     <main>

@@ -1,4 +1,4 @@
-import ThemeButton from '../ThemeButton'
+import { ModeToggleButton } from '../ModeToggleButton'
 import { SectionOdd } from './SectionOdd'
 
 type Props = {
@@ -16,7 +16,7 @@ export function Hero({
         heading={heading}
         subheading={subheading}
       />
-      <ThemeButton />
+      <ModeToggleButton />
     </>
   )
 }

@@ -1,2 +1,2 @@
 export { ModeToggleButton } from './ModeToggleButton'
-export { ShowcaseButtons } from './ShowcaseButtons'
+export { ShowCaseButtons } from './ShowCaseButtons'

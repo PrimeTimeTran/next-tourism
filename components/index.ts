@@ -1,3 +1,6 @@
+export { AppHeader } from './Navbar/AppHeader'
+export { Footer } from './Footer'
 export { Hero } from './sections/Hero'
+export { Section } from './sections/Section'
 export { SectionOdd } from './sections/SectionOdd'
 export { SectionEven } from './sections/SectionEven'

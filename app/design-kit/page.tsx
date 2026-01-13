@@ -1,5 +1,5 @@
-import { Hero, SectionOdd, SectionEven } from '../components'
-import { ShowcaseButtons } from './showcase/ShowCaseButtons'
+import { Hero, SectionOdd, SectionEven } from '../../components'
+import { ShowCaseButtons } from './showcase/ShowCaseButtons'
 
 export default function DesignKitPage() {
   return (
@@ -16,7 +16,7 @@ export default function DesignKitPage() {
         heading='Discover More'
         subheading='Uncover hidden gems and cultural wonders'
       />
-      <ShowcaseButtons />
+      <ShowCaseButtons />
     </main>
   )
 }
