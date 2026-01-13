@@ -37,6 +37,7 @@ export default async function HomePage() {
       <SectionOdd
         heading='Vietnam'
         subheading='Explore our curated tours and experiences'
+        heroImage='https://www.hindustantimes.com/ht-img/img/2025/03/25/1600x900/vietnam_1742885224191_1742885224438.jpg'
       />
       <Section>
         <ul>

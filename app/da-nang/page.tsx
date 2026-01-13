@@ -6,6 +6,7 @@ export default function Page() {
       <SectionOdd
         heading='Da Nang'
         subheading='The Gateway to Vietnam’s Central Coast'
+        heroImage='https://www.pelago.com/img/destinations/da-nang/0328-0214_da-nang-xlarge.jpg'
       />
     </main>
   )

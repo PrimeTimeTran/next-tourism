@@ -7,7 +7,6 @@ import {
   Moon,
   Menu,
   List,
-  Settings,
   Building2,
   HandPlatter,
   CalendarCheck,
@@ -52,11 +51,15 @@ const NAV_ITEMS: NavItemConfig[] = [
       {
         href: '/da-nang',
         label: 'Da Nang',
+        imgBG:
+          'https://www.pelago.com/img/destinations/da-nang/0328-0214_da-nang-xlarge.jpg',
         children: [],
       },
       {
         href: '/ho-chi-minh-city',
         label: 'Ho Chi Minh City',
+        imgBG:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/DJI_0550-HDR-Pano.jpg/2560px-DJI_0550-HDR-Pano.jpg',
         children: [
           { label: 'Cu Chi Tunnels', href: '/hcmc/cu-chi' },
           { label: 'Mekong Delta', href: '/hcmc/mekong' },
@@ -65,6 +68,8 @@ const NAV_ITEMS: NavItemConfig[] = [
       {
         href: '/hanoi',
         label: 'Hanoi',
+        imgBG:
+          'https://res.klook.com/image/upload/fl_lossy.progressive,q_60/Mobile/City/dgaaktw6p61dijkfekfe.jpg',
         children: [
           { label: 'Old Quarter', href: '/hanoi/old-quarter' },
           { label: 'Ha Long Bay', href: '/hanoi/ha-long' },
@@ -75,6 +80,8 @@ const NAV_ITEMS: NavItemConfig[] = [
       {
         href: '/nha-trang',
         label: 'Nha Trang',
+        imgBG:
+          'https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2021-05/Nha%20Trang%20Travel%20Guide%20Vietnam%20Tourism.jpg?itok=Pciu0qod',
         children: [],
       },
     ],
