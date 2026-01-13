@@ -2,12 +2,16 @@ type Props = {
   heading?: string
   subheading?: string
   heroImage?: string
+  buttonLeft?: React.ReactNode
+  buttonRight?: React.ReactNode
 }
 
 export function SectionOdd({
+  buttonLeft,
+  buttonRight,
+  heroImage = '',
   heading = 'Hero heading',
   subheading = 'Hero subheading',
-  heroImage = '',
 }: Props) {
   return (
     <section className='relative min-h-[70vh] flex items-center'>
@@ -32,12 +36,20 @@ export function SectionOdd({
 
             {/* Buttons */}
             <div className='flex flex-wrap gap-4 mt-4 justify-center md:justify-start'>
-              <button className='bg-white text-primary px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition'>
-                First Steps
-              </button>
-              <button className='bg-transparent border border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-primary transition'>
-                Learn More
-              </button>
+              {buttonLeft ? (
+                buttonLeft
+              ) : (
+                <button className='bg-white text-primary px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition'>
+                  First Steps
+                </button>
+              )}
+              {buttonRight ? (
+                buttonRight
+              ) : (
+                <button className='bg-transparent border border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-primary transition'>
+                  Learn More
+                </button>
+              )}
             </div>
           </div>
 

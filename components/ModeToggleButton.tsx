@@ -4,14 +4,13 @@ import { Moon, Sun } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 export function ModeToggleButton() {
-  const [mode, setMode] = useState<'light' | 'dark'>('light')
+  const [mode, setMode] = useState<'light' | 'dark'>(() => {
+    if (typeof window === 'undefined') return 'light'
+    return localStorage.getItem('mode') === 'dark' ? 'dark' : 'light'
+  })
 
   useEffect(() => {
-    if (mode === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
+    document.documentElement.dataset.mode = mode
     localStorage.setItem('mode', mode)
   }, [mode])
 
