@@ -24,25 +24,32 @@ export function NavItem({
     return <NavItemDesktop item={item} />
   }
 
-  // mobile
   return (
     <div>
-      <button
-        onClick={() => setOpen((p) => !p)}
-        className={linkClasses(false) + ' w-full flex justify-between'}
-      >
-        <span className='flex items-center gap-2'>
-          {item.icon}
-          {item.label}
-        </span>
+      {hasChildren ? (
+        <button
+          onClick={() => setOpen((p) => !p)}
+          className={linkClasses(false) + ' w-full flex justify-between'}
+        >
+          <span className='flex items-center gap-2'>
+            {item.icon}
+            {item.label}
+          </span>
 
-        {hasChildren && (
           <ChevronDown
             size={16}
             className={`transition-transform ${open ? 'rotate-180' : ''}`}
           />
-        )}
-      </button>
+        </button>
+      ) : (
+        <Link
+          href={item.href || '#'}
+          className={linkClasses(false) + ' w-full flex items-center gap-2'}
+        >
+          {item.icon}
+          {item.label}
+        </Link>
+      )}
 
       {hasChildren && open && (
         <div className='ml-4 mt-1 flex flex-col gap-1'>
