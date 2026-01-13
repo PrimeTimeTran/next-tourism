@@ -40,10 +40,7 @@ export default function RootLayout({
         `}
       >
         <AppHeader />
-
-        {/* This is the key */}
         <main className='flex-1'>{children}</main>
-
         <Footer />
       </body>
     </html>
