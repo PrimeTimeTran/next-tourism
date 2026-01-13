@@ -8,12 +8,20 @@ import type { NavItemConfig } from './nav.types'
 export function NavItem({
   item,
   variant,
+  onLinkClick,
 }: {
   item: NavItemConfig
   variant: 'desktop' | 'mobile'
+  onLinkClick?: () => void
 }) {
   const hasChildren = !!item.children?.length
   const [open, setOpen] = useState(false)
+
+  const handleLinkClick = (e: React.MouseEvent) => {
+    if (!hasChildren && onLinkClick) {
+      onLinkClick()
+    }
+  }
 
   const linkClasses = (desktop: boolean) =>
     desktop
@@ -28,7 +36,7 @@ export function NavItem({
     <div>
       {hasChildren ? (
         <button
-          onClick={() => setOpen((p) => !p)}
+          onClick={() => setOpen((prev) => !prev)} // Toggle open state for children
           className={linkClasses(false) + ' w-full flex justify-between'}
         >
           <span className='flex items-center gap-2'>
@@ -45,6 +53,7 @@ export function NavItem({
         <Link
           href={item.href || '#'}
           className={linkClasses(false) + ' w-full flex items-center gap-2'}
+          onClick={handleLinkClick} // Only trigger onLinkClick if no children
         >
           {item.icon}
           {item.label}
@@ -58,6 +67,7 @@ export function NavItem({
               key={child.label}
               item={child}
               variant='mobile'
+              onLinkClick={onLinkClick} // Pass onLinkClick to child items
             />
           ))}
         </div>

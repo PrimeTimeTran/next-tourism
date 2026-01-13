@@ -107,15 +107,6 @@ const NAV_ITEMS: NavItemConfig[] = [
       { label: 'Currency Exchange', href: '/currency' },
     ],
   },
-  // {
-  //   label: 'Settings',
-  //   href: '/settings',
-  //   icon: <Settings size={18} />,
-  //   children: [
-  //     { label: 'Account', href: '/settings/account' },
-  //     { label: 'Billing', href: '/settings/billing' },
-  //   ],
-  // },
 ]
 
 export function AppHeader() {
@@ -133,6 +124,10 @@ export function AppHeader() {
 
   function toggleMode() {
     setMode((prev) => (prev === 'light' ? 'dark' : 'light'))
+  }
+
+  function handleLinkClick() {
+    setMobileOpen(false)
   }
 
   return (
@@ -185,13 +180,14 @@ export function AppHeader() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className='md:hidden border-t border-divider bg-surface'>
+        <div className='md:hidden fixed inset-x-0 top-16 z-50 bg-surface border-t border-divider'>
           <nav className='flex flex-col gap-1 p-4'>
             {NAV_ITEMS.map((item) => (
               <NavItem
                 key={item.label}
                 item={item}
                 variant='mobile'
+                onLinkClick={handleLinkClick} // Pass the handleLinkClick function here
               />
             ))}
           </nav>
