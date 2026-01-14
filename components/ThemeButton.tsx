@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react'
 import { palettes } from '../lib/colors'
 
+type Theme = keyof typeof palettes
+type Mode = 'light' | 'dark'
+
 function applyPalette(palette: Record<string, string>) {
   Object.entries(palette).forEach(([key, value]) => {
     const cssVar =
@@ -12,21 +15,72 @@ function applyPalette(palette: Record<string, string>) {
   })
 }
 
+const paletteKeys = Object.keys(palettes) as Array<keyof typeof palettes>
+
 export function ThemeButton() {
-  const [theme, setTheme] = useState<'ocean' | 'forest'>('ocean')
-  const [mode, setMode] = useState<'light' | 'dark'>('light')
+  const [mode, setMode] = useState<Mode>('light')
+  const [theme, setTheme] = useState<Theme>('ocean')
+
+  function toggleMode() {
+    setMode((prev) => (prev === 'light' ? 'dark' : 'light'))
+  }
+
+  function toggleTheme() {
+    setTheme((prev) => {
+      let next = prev
+
+      while (next === prev) {
+        next = paletteKeys[Math.floor(Math.random() * paletteKeys.length)]
+      }
+
+      return next
+    })
+  }
 
   useEffect(() => {
     applyPalette(palettes[theme][mode])
   }, [theme, mode])
 
-  function toggleTheme() {
-    setTheme((prev) => (prev === 'ocean' ? 'forest' : 'ocean'))
-  }
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      const target = e.target as HTMLElement
 
-  function toggleMode() {
-    setMode((prev) => (prev === 'light' ? 'dark' : 'light'))
-  }
+      if (
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.isContentEditable
+      ) {
+        return
+      }
+
+      // Option (Alt) + T — works on Mac & Windows
+      if (e.altKey && e.code === 'KeyT') {
+        e.preventDefault()
+
+        setTheme((prev) => {
+          let next = prev
+          while (next === prev) {
+            next = paletteKeys[Math.floor(Math.random() * paletteKeys.length)]
+          }
+
+          console.log('⌨️ Theme:', prev, '→', next)
+          return next
+        })
+      }
+      if (e.altKey && e.code === 'KeyM') {
+        e.preventDefault()
+
+        setMode((prev) => {
+          const next = prev === 'light' ? 'dark' : 'light'
+          console.log('🌗 Mode:', prev, '→', next)
+          return next
+        })
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   return (
     <div className='flex gap-2'>
@@ -46,7 +100,7 @@ export function ThemeButton() {
     focus-visible:ring-offset-background
   '
       >
-        Switch Theme
+        Sample Themes (⌥ + t)
       </button>
       <button
         onClick={toggleMode}
@@ -64,7 +118,7 @@ export function ThemeButton() {
     focus-visible:ring-offset-background
   '
       >
-        Switch Mode
+        Switch Mode (⌥ + m)
       </button>
     </div>
   )
