@@ -1,6 +1,7 @@
 import Image from 'next/image'
 type Props = {
   heading?: string
+  headingEndAdornment?: string
   subheading?: string
   heroImage?: string
   buttonLeft?: React.ReactNode
@@ -12,11 +13,11 @@ export function SectionOdd({
   buttonRight,
   heroImage = '',
   heading = 'Hero heading',
+  headingEndAdornment = 'beautiful',
   subheading = 'Hero subheading',
 }: Props) {
   return (
     <section className='relative min-h-[70vh] flex items-center bg-background'>
-      {/* Background image */}
       <Image
         fill
         alt=''
@@ -24,17 +25,15 @@ export function SectionOdd({
         src={heroImage}
         className='object-cover'
       />
-
-      {/* Contrast overlay */}
       <div className='absolute inset-0 bg-overlay z-0' />
-
-      {/* Content */}
       <div className='container mx-auto px-4 relative z-10'>
         <div className='flex flex-col md:flex-row items-center gap-8'>
           <div className='md:w-1/2 flex flex-col gap-4 text-center md:text-left'>
-            <h1 className='text-4xl md:text-5xl font-bold text-primary'>
-              {heading}
+            <h1 className='text-4xl md:text-5xl font-bold text-on-background'>
+              {heading}{' '}
+              <span className='text-primary'>{headingEndAdornment}</span>
             </h1>
+
             <p className='text-primary text-lg md:text-xl'>{subheading}</p>
 
             <div className='flex flex-wrap gap-4 mt-4 justify-center md:justify-start'>
