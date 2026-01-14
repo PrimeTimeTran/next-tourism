@@ -1,33 +1,71 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { palettes } from '../lib/colors'
+
+function applyPalette(palette: Record<string, string>) {
+  Object.entries(palette).forEach(([key, value]) => {
+    const cssVar =
+      '--color-' + key.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase())
+
+    document.documentElement.style.setProperty(cssVar, value)
+  })
+}
 
 export function ThemeButton() {
-  const [colors, setColors] = useState({
-    primary: '#EF4444', // red
-    secondary: '#FBBF24', // yellow
-  })
+  const [theme, setTheme] = useState<'ocean' | 'forest'>('ocean')
+  const [mode, setMode] = useState<'light' | 'dark'>('light')
+
+  useEffect(() => {
+    applyPalette(palettes[theme][mode])
+  }, [theme, mode])
 
   function toggleTheme() {
-    const newColors =
-      colors.primary === '#EF4444'
-        ? { primary: '#1e40af', secondary: '#EF4444' } // blue/red
-        : { primary: '#EF4444', secondary: '#FBBF24' } // red/yellow
+    setTheme((prev) => (prev === 'ocean' ? 'forest' : 'ocean'))
+  }
 
-    // Apply CSS variables globally
-    Object.entries(newColors).forEach(([key, value]) => {
-      document.documentElement.style.setProperty(`--color-${key}`, value)
-    })
-
-    setColors(newColors)
+  function toggleMode() {
+    setMode((prev) => (prev === 'light' ? 'dark' : 'light'))
   }
 
   return (
-    <button
-      onClick={toggleTheme}
-      className='bg-primary text-on-primary px-4 py-2 rounded border border-outline'
-    >
-      Switch Theme
-    </button>
+    <div className='flex gap-2'>
+      <button
+        onClick={toggleTheme}
+        className='
+    bg-primary
+    text-on-primary
+    px-4 py-2 rounded
+    border border-outline
+    transition-colors duration-200
+    hover:bg-primary-variant
+    focus-visible:outline-none
+    focus-visible:ring-2
+    focus-visible:ring-primary
+    focus-visible:ring-offset-2
+    focus-visible:ring-offset-background
+  '
+      >
+        Switch Theme
+      </button>
+      <button
+        onClick={toggleMode}
+        className='
+    bg-surface
+    text-on-surface
+    px-4 py-2 rounded
+    border border-outline
+    transition-colors duration-200
+    hover:bg-surface-variant
+    focus-visible:outline-none
+    focus-visible:ring-2
+    focus-visible:ring-primary
+    focus-visible:ring-offset-2
+    focus-visible:ring-offset-background
+  '
+      >
+        Switch Mode
+      </button>
+    </div>
   )
 }

@@ -7,7 +7,6 @@ export function Footer() {
     <footer className='border-t border-divider bg-background'>
       <div className='mx-auto max-w-7xl px-6 py-12'>
         <div className='grid gap-8 md:grid-cols-4'>
-          {/* Brand / Identity */}
           <div className='space-y-4'>
             <h3 className='text-lg font-semibold text-on-surface'>YourBrand</h3>
 

@@ -1,9 +1,6 @@
-import { ModeToggleButton } from './ModeToggleButton'
-
 export function ShowCaseButtons() {
   return (
-    <div className='flex flex-wrap gap-4 bg-background p-6'>
-      <ModeToggleButton />
+    <div className='flex flex-wrap gap-4 bg-background p-6 justify-center'>
       {/* Primary */}
       <button className='bg-primary text-on-primary px-4 py-2 rounded'>
         Primary

@@ -1,10 +1,11 @@
+import { Hero, SectionOdd, ThemeButton, SectionEven } from '../../components'
 import {
-  Hero,
-  ThemeButton,
-  SectionEven,
-  ModeToggleButton,
-} from '../../components'
-import { ShowCaseButtons } from './showcase/ShowCaseButtons'
+  ShowCaseForms,
+  ShowCaseButtons,
+  ShowCaseSurfaces,
+  ShowCaseTypography,
+  ShowCaseSurfacesAndText,
+} from './showcases'
 
 export default function DesignKitPage() {
   return (
@@ -13,14 +14,21 @@ export default function DesignKitPage() {
         heading='A DesignKit Hero Heading'
         subheading='A DesignKit Hero Subheading is useful for additional information about the content'
         buttonLeft={<ThemeButton />}
-        buttonRight={<ModeToggleButton />}
-      />
-
-      <SectionEven
-        heading='Discover More'
-        subheading='Uncover hidden gems and cultural wonders'
       />
       <ShowCaseButtons />
+      <hr />
+      <ShowCaseSurfaces />
+      <hr />
+      <ShowCaseTypography />
+      <hr />
+      <ShowCaseSurfacesAndText />
+      <hr />
+      <ShowCaseForms />
+      <hr />
+      <SectionEven
+        heading='Section Even'
+        subheading='Uncover hidden gems and cultural wonders'
+      />
     </main>
   )
 }

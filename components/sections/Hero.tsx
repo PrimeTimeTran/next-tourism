@@ -18,7 +18,7 @@ export function Hero({
       heading={heading}
       subheading={subheading}
       buttonLeft={buttonLeft}
-      buttonRight={buttonRight}
+      buttonRight={null}
     />
   )
 }
