@@ -1,4 +1,8 @@
+'use client'
+
 import Image from 'next/image'
+import { ThemedButton } from '../ThemedButton'
+
 type Props = {
   heading?: string
   headingEndAdornment?: string
@@ -13,7 +17,7 @@ export function SectionOdd({
   buttonRight,
   heroImage = '',
   heading = 'Hero heading',
-  headingEndAdornment = 'beautiful',
+  headingEndAdornment,
   subheading = 'Hero subheading',
 }: Props) {
   return (
@@ -25,24 +29,26 @@ export function SectionOdd({
         src={heroImage}
         className='object-cover'
       />
-      <div className='absolute inset-0 bg-overlay z-0' />
+      <div className='absolute inset-0 bg-overlay dark:bg-black/60 z-0' />
+
       <div className='container mx-auto px-4 relative z-10'>
         <div className='flex flex-col md:flex-row items-center gap-8'>
           <div className='md:w-1/2 flex flex-col gap-4 text-center md:text-left'>
-            <h1 className='text-4xl md:text-5xl font-bold text-on-background'>
+            <h1 className='text-4xl md:text-5xl font-bold text-white'>
               {heading}{' '}
               <span className='text-primary'>{headingEndAdornment}</span>
             </h1>
 
-            <p className='text-primary text-lg md:text-xl'>{subheading}</p>
+            <p className='text-white/85 text-lg md:text-xl'>{subheading}</p>
 
             <div className='flex flex-wrap gap-4 mt-4 justify-center md:justify-start'>
               {buttonLeft ? (
                 buttonLeft
               ) : (
-                <button className='bg-primary text-primary px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition'>
-                  First Steps
-                </button>
+                <ThemedButton
+                  onClick={() => {}}
+                  text='First Steps'
+                />
               )}
               {buttonRight ? (
                 buttonRight

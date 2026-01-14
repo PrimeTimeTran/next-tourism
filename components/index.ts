@@ -1,6 +1,7 @@
 export { Footer } from './Footer'
 export { AppHeader } from './Navbar/AppHeader'
 export { ThemeButton } from './ThemeButton'
+export { ThemedButton } from './ThemedButton'
 export { ModeToggleButton } from './ModeToggleButton'
 export { Hero } from './sections/Hero'
 export { Section } from './sections/Section'
