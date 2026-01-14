@@ -45,17 +45,17 @@ export function SectionOdd({
               {buttonLeft ? (
                 buttonLeft
               ) : (
-                <ThemedButton
-                  onClick={() => {}}
-                  text='First Steps'
-                />
+                <ThemedButton onClick={() => {}}>Get Started</ThemedButton>
               )}
               {buttonRight ? (
                 buttonRight
               ) : (
-                <button className='bg-primary border border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-primary transition'>
+                <ThemedButton
+                  variant='outline'
+                  tone='inverse'
+                >
                   Learn More
-                </button>
+                </ThemedButton>
               )}
             </div>
           </div>
