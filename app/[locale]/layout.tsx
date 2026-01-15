@@ -1,4 +1,3 @@
-// app/[locale]/layout.tsx
 import { notFound } from 'next/navigation'
 import { locales, Locale } from '@/i18n/config'
 import { getMessages } from '@/i18n/get-messages'

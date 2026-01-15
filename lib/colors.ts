@@ -1,79 +1,68 @@
-
 export const oceanLightPalette = {
-  /* Brand */
-  primary: '#2563eb', // blue-600
-  primaryVariant: '#1d4ed8', // blue-700
+  primary: '#2563eb',
+  primaryVariant: '#1d4ed8',
   onPrimary: '#ffffff',
 
-  secondary: '#0ea5e9', // sky-500
-  secondaryVariant: '#0284c7', // sky-600
+  secondary: '#0ea5e9',
+  secondaryVariant: '#0284c7',
   onSecondary: '#ffffff',
 
-  /* Surfaces */
   background: '#ffffff',
   onBackground: '#0f172a',
 
-  surface: '#f8fafc', // slate-50
-  surfaceVariant: '#e2e8f0', // slate-200
-  onSurface: '#020617', // slate-950
-  onSurfaceMuted: '#64748b', // slate-500
+  surface: '#f8fafc',
 
-  /* Feedback */
-  success: '#22c55e', // green-500
+  surface1: '#ffffff',
+  surface2: '#f1f5f9',
+  surface3: '#e2e8f0',
+
+  surfaceVariant: '#e2e8f0',
+  onSurface: '#020617',
+  onSurfaceMuted: '#64748b',
+  success: '#22c55e',
   onSuccess: '#ffffff',
 
-  warning: '#facc15', // yellow-400
+  warning: '#facc15',
   onWarning: '#020617',
 
-  error: '#ef4444', // red-500
+  error: '#ef4444',
   onError: '#ffffff',
 
-  info: '#0ea5e9', // sky-500
+  info: '#0ea5e9',
   onInfo: '#ffffff',
 
-  /* Structure */
-  outline: '#c7d2fe', // indigo-200
-  divider: '#e2e8f0', // slate-200
-  overlay: 'rgba(15, 23, 42, 0.45)', // slate-900-ish
+  outline: '#c7d2fe',
+  divider: '#e2e8f0',
+  overlay: 'rgba(15, 23, 42, 0.45)',
 } as const
 
 export const oceanDarkPalette = {
-  /* Brand */
-  primary: '#60a5fa', // blue-400
-  primaryVariant: '#2563eb', // blue-600
+  primary: '#60a5fa',
+  primaryVariant: '#2563eb',
   onPrimary: '#020617',
-
-  secondary: '#38bdf8', // sky-400
-  secondaryVariant: '#0ea5e9', // sky-500
+  secondary: '#38bdf8',
+  secondaryVariant: '#0ea5e9',
   onSecondary: '#020617',
-
-  /* Surfaces */
-  background: '#020617', // slate-950
-  onBackground: '#f8fafc', // slate-50
-
+  background: '#020617',
+  onBackground: '#f8fafc',
   surface: '#020617',
-  surfaceVariant: '#0f172a', // slate-900-ish
-
-  onSurface: '#e5e7eb', // gray-200
-  onSurfaceMuted: '#94a3b8', // slate-400
-
-  /* Feedback */
+  surface1: '#0b1220',
+  surface2: '#0f172a',
+  surface3: '#1e293b',
+  surfaceVariant: '#0f172a',
+  onSurface: '#e5e7eb',
+  onSurfaceMuted: '#94a3b8',
   success: '#22c55e',
   onSuccess: '#020617',
-
-  warning: '#fde047', // yellow-300
+  warning: '#fde047',
   onWarning: '#020617',
-
-  error: '#f87171', // red-400
+  error: '#f87171',
   onError: '#020617',
-
   info: '#38bdf8',
   onInfo: '#020617',
-
-  /* Structure */
-  outline: '#1e40af', // blue-800
-  divider: '#1e293b', // slate-800
-  overlay: 'rgba(248, 250, 252, 0.08)', // soft light scrim
+  outline: '#1e40af',
+  divider: '#1e293b',
+  overlay: 'rgba(248, 250, 252, 0.08)',
 } as const
 
 const forestLightPalette = {
